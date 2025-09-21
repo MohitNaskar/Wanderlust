@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Startup Analyst</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-container" class="container">
+        <h2>AI Startup Analyst Login</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button id="login-btn">Login</button>
+        <button id="signup-btn">Sign Up</button>
+    </div>
+
+    <div id="app-container" class="container hidden">
+        <div class="header">
+            <h2>Welcome, <span id="user-email"></span>!</h2>
+            <button id="logout-btn">Logout</button>
+        </div>
+        
+        <h3>Upload a Pitch Deck for Analysis</h3>
+        <div class="upload-section">
+            <input type="file" id="deck-uploader" accept=".pdf">
+            <button id="upload-btn">Analyze Deck</button>
+        </div>
+        
+        <div id="status-section">
+            <p id="status-text">Please select a PDF file to begin.</p>
+        </div>
+
+        <div id="results-container" class="hidden">
+            <h3 id="result-startup-name"></h3>
+            <div class="result-grid">
+                <div class="result-card">
+                    <h4><span role="img" aria-label="info">ℹ️</span> Key Information</h4>
+                    <p><strong>Problem:</strong> <span id="info-problem"></span></p>
+                    <p><strong>Solution:</strong> <span id="info-solution"></span></p>
+                    <p><strong>Business Model:</strong> <span id="info-model"></span></p>
+                    <p><strong>Market Size (TAM):</strong> <span id="info-tam"></span></p>
+                    <p><strong>Team Summary:</strong> <span id="info-team"></span></p>
+                    <p><strong>Traction:</strong> <span id="info-traction"></span></p>
+                    <p><strong>Competition:</strong> <span id="info-competition"></span></p>
+                </div>
+
+                <div class="result-card">
+                    <h4><span role="img" aria-label="flag">🚩</span> Red Flags</h4>
+                    <ul id="info-red-flags"></ul>
+                </div>
+
+                <div class="result-card">
+                    <h4><span role="img" aria-label="chart">📊</span> SWOT Analysis</h4>
+                    <h5>Strengths</h5>
+                    <ul id="swot-strengths"></ul>
+                    <h5>Weaknesses</h5>
+                    <ul id="swot-weaknesses"></ul>
+                    <h5>Opportunities</h5>
+                    <ul id="swot-opportunities"></ul>
+                    <h5>Threats</h5>
+                    <ul id="swot-threats"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    
+    <script src="app.js"></script>
+</body>
+</html>
